@@ -1,0 +1,14 @@
+.page {
+  max-width: 100%;
+  margin: auto;
+  font-family: "poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  padding: 80px 80px 60px;
+  background-color: #fcf5e5;
+}

@@ -1,0 +1,14 @@
+.container {
+  min-width: 1280px;
+  min-height: 970px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 40px 20px;
+}
+
+.container__card {
+  width: 413px;
+  height: 445px;
+  border-radius: 10px;
+}
