@@ -1,0 +1,7 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: rgba(33, 33, 33, 0.7);
+}

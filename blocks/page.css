@@ -1,10 +1,8 @@
-p {
-  margin-top: 0;
-}
 .page {
   min-height: 100vh;
   font-family: "poppins", sans-serif;
   background-color: #fcf5e5;
+  padding-bottom: 60px;
 }
 
 .page__section {
