@@ -6,57 +6,55 @@
     <meta name="description" content="Spots" />
     <meta name="keywords" content="Spots, HTML, CSS" />
     <meta name="author" content="Lenin Miranda" />
-    <link rel="stylesheet" href="./pages/styles.css" />
+    <link rel="stylesheet" href="./pages/index.css" />
     <link rel="icon" href="./favicon.ico" />
     <title>Tripleten Spots</title>
   </head>
   <body>
     <div class="page">
+      <header class="header">
+        <h1 class="header_title">
+          <img class="header__logo" alt="arrow logo" src="./images/spots.svg" />
+        </h1>
+      </header>
       <main class="main">
-        <header class="header">
-          <h1 class="header_title">
-            <img
-              class="header__logo"
-              alt="arrow logo"
-              src="./images/spots.svg"
-            />
-          </h1>
-        </header>
-        <div class="profile page__section">
-          <div class="profile__container-avatar">
-            <img
-              class="profile__avatar"
-              alt="Profile-picture"
-              src="./images/avatar.jpg"
-            />
-          </div>
-          <div class="profile__container">
-            <h2 class="profile__username">Bessie Coleman</h2>
-            <p class="profile__description">Civil Aviator</p>
-            <p class="profile__edit-profile">
-              <button class="profile__edit-btn">
-                <img
-                  alt="pencil"
-                  class="profile__logo"
-                  src="./images/pencil.svg"
-                />
-                Edit Profile
-              </button>
-            </p>
-          </div>
-          <button type="submit" class="profile__buttom">
-            <img
-              src="./images/Plus.svg"
-              class="profile__logo-plus"
-              alt="Plus logo"
-            />
-            New Post
-          </button>
-        </div>
+        <section class="profile">
+          <div class="profile__container profile__container_page__section">
+            <div class="profile__container-avatar">
+              <img
+                class="profile__avatar"
+                alt="Profile-picture"
+                src="./images/avatar.jpg"
+              />
+            </div>
 
-        <section class="container page__section">
-          <ul class="container__cards">
-            <li class="container__card">
+            <div class="profile__container-info">
+              <h2 class="profile__username">Bessie Coleman</h2>
+              <p class="profile__description">Civil Aviator</p>
+              <p class="profile__edit-profile">
+                <button class="profile__edit-btn">
+                  <img
+                    alt="pencil"
+                    class="profile__logo"
+                    src="./images/pencil.svg"
+                  />
+                  Edit Profile
+                </button>
+              </p>
+            </div>
+            <button type="submit" class="profile__buttom">
+              <img
+                src="./images/Plus.svg"
+                class="profile__logo-plus"
+                alt="Plus logo"
+              />
+              New Post
+            </button>
+          </div>
+        </section>
+        <section class="media__container media__container_page__section">
+          <ul class="media__cards">
+            <li class="media__card">
               <img
                 class="card__image"
                 alt="profile image"
@@ -71,7 +69,7 @@
                 </h2>
               </div>
             </li>
-            <li class="container__card">
+            <li class="media__card">
               <img
                 class="card__image"
                 alt="profile image"
@@ -84,7 +82,7 @@
                 </h2>
               </div>
             </li>
-            <li class="container__card">
+            <li class="media__card">
               <img
                 class="card__image"
                 alt="profile image"
@@ -99,7 +97,7 @@
                 </h2>
               </div>
             </li>
-            <li class="container__card">
+            <li class="media__card">
               <img
                 class="card__image"
                 alt="profile image"
@@ -112,7 +110,7 @@
                 </h2>
               </div>
             </li>
-            <li class="container__card">
+            <li class="media__card">
               <img
                 class="card__image"
                 alt="profile image"
@@ -127,7 +125,7 @@
                 </h2>
               </div>
             </li>
-            <li class="container__card">
+            <li class="media__card">
               <img
                 class="card__image"
                 alt="profile image"
