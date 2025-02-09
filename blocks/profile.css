@@ -53,6 +53,7 @@
 
 .profile__description {
   font-size: 16px;
+  font-weight: 500;
   margin: 0;
   color: rgb(33, 33, 33, 0.7);
   text-overflow: ellipsis;
@@ -64,8 +65,12 @@
 }
 
 .profile__edit-profile {
+  font-size: 16px;
+  line-height: 1;
   margin-top: auto;
   margin-bottom: 0;
+  font-weight: 500;
+  color: #212121;
 }
 .profile__edit-btn {
   font-size: 16px;
