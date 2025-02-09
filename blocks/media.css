@@ -1,15 +1,9 @@
-.media__container_page__section {
-  margin: 0 auto;
-  max-width: 1280px;
-}
-
 .media__container {
   border-bottom: 1px rgb(33, 33, 33, 0.4) solid;
   padding-bottom: 36px;
   margin-bottom: 60px;
-}
-.media__card {
-  max-width: 413px;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 .media__cards {
   grid-template-columns: repeat(auto-fit, 413px);
@@ -19,7 +13,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
   padding: 0;
   margin: 0;
   list-style-type: none;

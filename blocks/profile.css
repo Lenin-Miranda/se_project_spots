@@ -1,9 +1,5 @@
-.profile__container_page__section {
-  margin: 0 auto;
-  max-width: 1280px;
-}
-
 .profile__container {
+  max-width: 1280px;
   display: flex;
   border-bottom: 1px rgb(33, 33, 33, 0.4) solid;
   padding-bottom: 20px;
@@ -14,10 +10,12 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
-  border-radius: 5px;
+  object-fit: cover;
+  border-radius: 8px;
 }
+
 .profile__buttom {
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #212121;
   min-width: 149px;
   min-height: 52px;
@@ -31,11 +29,23 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+}
+
+.profile__buttom:hover {
+  opacity: 80%;
 }
 
 .profile__container-info {
   display: flex;
+
   flex-direction: column;
+  font-size: 16px;
+  line-height: 1;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #212121;
 }
 
 .profile__username {
@@ -49,12 +59,14 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  color: #212121;
+  max-width: 420px;
 }
 
 .profile__description {
   font-size: 16px;
   font-weight: 500;
-  margin: 0;
+  margin: 0 0 auto;
   color: rgb(33, 33, 33, 0.7);
   text-overflow: ellipsis;
   overflow: hidden;
@@ -62,26 +74,32 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  max-width: 420px;
+  margin-bottom: auto;
 }
 
-.profile__edit-profile {
-  font-size: 16px;
-  line-height: 1;
-  margin-top: auto;
-  margin-bottom: 0;
-  font-weight: 500;
-  color: #212121;
-}
 .profile__edit-btn {
   font-size: 16px;
   background-color: transparent;
   border: none;
-  color: rgb(33, 33, 33, 1);
+  color: rgba(33, 33, 33, 0.7);
   padding: 0;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: left;
+  transition: color 0.2s linear;
 }
-
+.profile__edit-btn:hover {
+  color: #212121;
+}
 .profile__logo {
   max-width: 18px;
+  opacity: 0.7;
+  transition: opacity 0.2s linear;
+}
+
+.profile__logo:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 627px) {
@@ -89,6 +107,7 @@
     flex-direction: column;
     align-items: center;
     max-width: 288px;
+    margin-top: 20px;
   }
   .profile__avatar {
     margin: 0;
@@ -116,9 +135,8 @@
   }
 
   .profile__edit-btn {
-    font-size: 0.8rem;
-    opacity: 70%;
     margin-bottom: 20px;
+    text-align: center;
   }
 
   .profile__logo {
