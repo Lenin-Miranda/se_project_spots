@@ -22,3 +22,7 @@ This is my third project of the software engineering program at TripleTen. It wa
 ## Link
 
 https://lenin-miranda.github.io/se_project_spots/
+
+## Video for my project
+
+https://drive.google.com/file/d/1CiKqVAWDXIzpi47nH5Sc-qIXTN5kVNrB/view?usp=drive_link
