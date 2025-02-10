@@ -1,4 +1,4 @@
-.media__card {
+.card {
   max-width: 413px;
 }
 
@@ -51,6 +51,7 @@
 
   .card__description {
     font-size: 16px;
+    max-width: 288px;
   }
 
   .card__like-btn {
