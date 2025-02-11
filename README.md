@@ -13,7 +13,7 @@ This is my third project of the software engineering program at TripleTen. It wa
 
 ## Features
 
-! [My website can have a better time loading all the content with this](./images/feature1.png)
+! [My website can have a better time rendering all the content with this](./images/feature1.png)
 
 ! [Improving this new feature so i can make my website responsive](./images/feature2.png)
 
