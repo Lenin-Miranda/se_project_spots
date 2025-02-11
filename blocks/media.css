@@ -3,7 +3,6 @@
   padding-bottom: 36px;
   margin-bottom: 60px;
   max-width: 1280px;
-  margin: 0 auto;
 }
 .media__cards {
   grid-template-columns: repeat(auto-fit, 413px);
