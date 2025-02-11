@@ -1,4 +1,4 @@
-.media__container {
+.media {
   border-bottom: 1px rgb(33, 33, 33, 0.4) solid;
   padding-bottom: 36px;
   margin-bottom: 60px;
@@ -19,7 +19,7 @@
 }
 
 @media screen and (max-width: 627px) {
-  .media__container {
+  .media {
     max-width: 288px;
     padding-bottom: 22px;
   }
