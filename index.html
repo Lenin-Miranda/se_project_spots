@@ -125,6 +125,35 @@
       <footer class="footer page__section">
         <p class="footer__text">2025 &copy; spots</p>
       </footer>
+      <div class="modal modal_opened">
+        <div class="modal__container">
+          <h2 class="modal__description">
+            Edit profile
+            <img
+              src="./images/BlackX.svg"
+              alt="close icon"
+              class="modal__icon"
+            />
+          </h2>
+          <form name="edit-profile" class="modal__form">
+            <label class="modal__label" for="name">Name</label>
+            <input
+              class="modal__input"
+              id="name"
+              type="text"
+              placeholder="Type your name"
+            />
+            <label class="modal__label" for="description">Description</label>
+            <input
+              class="modal__input"
+              id="description"
+              type="text"
+              placeholder="Describe yourself"
+            />
+            <button type="submit" class="modal__button">Save</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
   <script src="./scripts/index.js" defer></script>
