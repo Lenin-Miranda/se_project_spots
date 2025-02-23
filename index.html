@@ -29,7 +29,6 @@
             <div class="profile__container-info">
               <h2 class="profile__username">Bessie Coleman</h2>
               <p class="profile__description">Civil Aviator</p>
-
               <button class="profile__edit-btn" type="button">
                 <img
                   alt="pencil"
@@ -49,78 +48,81 @@
             </button>
           </div>
         </section>
-        <section class="media">
-          <ul class="media__cards">
-            <li class="card">
-              <img
-                class="card__image"
-                alt="profile image"
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Vol Thorens</h2>
-                <button class="card__like-btn" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="profile image"
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Restaurant terrace</h2>
-                <button class="card__like-btn" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="profile image"
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-              />
-              <div class="card__content">
-                <h2 class="card__description">An outdoor cafe</h2>
-                <button class="card__like-btn" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="profile image"
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-              />
-              <div class="card__content">
-                <h2 class="card__description">
-                  A very long bridge, over the forest...
-                </h2>
-                <button class="card__like-btn" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="profile image"
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Tunnel with morning light</h2>
-                <button class="card__like-btn" type="button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="card__image"
-                alt="profile image"
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-              />
-              <div class="card__content">
-                <h2 class="card__description">Mountain house</h2>
-                <button class="card__like-btn" type="button"></button>
-              </div>
-            </li>
-          </ul>
-        </section>
+
+          <section class="media">
+            <ul class="media__cards">
+              <template id="media-template">
+              <li class="card">
+                <img
+                  class="card__image"
+                  alt="profile image"
+                  src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                />
+                <div class="card__content">
+                  <h2 class="card__description">Vol Thorens</h2>
+                  <button class="card__like-btn" type="button"></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  class="card__image"
+                  alt="profile image"
+                  src="./images/2-photo-by-ceiline-from-pexels.jpg"
+                />
+                <div class="card__content">
+                  <h2 class="card__description">Restaurant terrace</h2>
+                  <button class="card__like-btn" type="button"></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  class="card__image"
+                  alt="profile image"
+                  src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
+                />
+                <div class="card__content">
+                  <h2 class="card__description">An outdoor cafe</h2>
+                  <button class="card__like-btn" type="button"></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  class="card__image"
+                  alt="profile image"
+                  src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
+                />
+                <div class="card__content">
+                  <h2 class="card__description">
+                    A very long bridge, over the forest...
+                  </h2>
+                  <button class="card__like-btn" type="button"></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  class="card__image"
+                  alt="profile image"
+                  src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+                />
+                <div class="card__content">
+                  <h2 class="card__description">Tunnel with morning light</h2>
+                  <button class="card__like-btn" type="button"></button>
+                </div>
+              </li>
+              <li class="card">
+                <img
+                  class="card__image"
+                  alt="profile image"
+                  src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+                />
+                <div class="card__content">
+                  <h2 class="card__description">Mountain house</h2>
+                  <button class="card__like-btn" type="button"></button>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </template>
       </main>
       <footer class="footer page__section">
         <p class="footer__text">2025 &copy; spots</p>
@@ -138,14 +140,14 @@
           <form name="edit-profile" class="modal__form">
             <label class="modal__label" for="name">Name</label>
             <input
-              class="modal__input"
+              class="modal__input modal__input_type_name"
               id="name"
               type="text"
               placeholder="Type your name"
             />
             <label class="modal__label" for="description">Description</label>
             <input
-              class="modal__input"
+              class="modal__input modal__input_type_description"
               id="description"
               type="text"
               placeholder="Describe yourself"

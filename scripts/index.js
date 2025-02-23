@@ -27,13 +27,57 @@ const initialCards = [
 const modal = document.querySelector("#modal-edit");
 const modalOpen = document.querySelector(".profile__edit-btn");
 const modalClose = modal.querySelector(".modal__icon");
+let nameText = document.querySelector(".modal__input_type_name");
+let descriptionText = document.querySelector(".modal__input_type_description");
+let profileName = document.querySelector(".profile__username");
+let profileDescription = document.querySelector(".profile__description");
+const profileForm = document.querySelector(".modal__form");
 
-function open() {
+const cardsTemplate = document.querySelector("#media-template");
+const cardsList = document.querySelector(".media__cards");
+
+function getCardsElement(data) {
+  console.log(data);
+  const cardsElement = cardsTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+
+  const cardsName = cardsElement.querySelector(".card__description");
+
+  cardsName.textContent = data.name;
+
+  const cardsImage = cardsElement.querySelector(".card__image");
+  cardsImage.src = data.link;
+  cardsImage.alt = data.name;
+
+  return cardsElement;
+}
+
+function openModal() {
+  nameText.value = document.querySelector(".profile__username").textContent;
+  descriptionText.value = document.querySelector(
+    ".profile__description"
+  ).textContent;
   modal.classList.add("modal__opened");
 }
-function close() {
+function closeModal() {
   modal.classList.remove("modal__opened");
 }
 
-modalClose.addEventListener("click", close);
-modalOpen.addEventListener("click", open);
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
+  profileName.textContent = nameText.value;
+  profileDescription.textContent = descriptionText.value;
+
+  closeModal();
+}
+
+modalClose.addEventListener("click", closeModal);
+modalOpen.addEventListener("click", openModal);
+profileForm.addEventListener("submit", handleProfileFormSubmit);
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardsElement = getCardsElement(initialCards[i]);
+  cardsList.prepend(cardsElement);
+}
