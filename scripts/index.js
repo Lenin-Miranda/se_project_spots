@@ -37,7 +37,6 @@ const cardsTemplate = document.querySelector("#media-template");
 const cardsList = document.querySelector(".media__cards");
 
 function getCardsElement(data) {
-  console.log(data);
   const cardsElement = cardsTemplate.content
     .querySelector(".card")
     .cloneNode(true);
