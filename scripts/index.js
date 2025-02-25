@@ -57,10 +57,10 @@ function openModal() {
   descriptionText.value = document.querySelector(
     ".profile__description"
   ).textContent;
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
 }
 function closeModal() {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
 }
 
 function handleProfileFormSubmit(evt) {

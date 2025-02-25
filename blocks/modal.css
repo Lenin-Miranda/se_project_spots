@@ -12,7 +12,7 @@
   bottom: 0;
 }
 
-.modal__opened {
+.modal_opened {
   visibility: visible;
 }
 
