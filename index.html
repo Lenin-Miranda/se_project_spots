@@ -96,6 +96,48 @@
           </form>
         </div>
       </div>
+
+      <div class="modal" id="modal-edit-card">
+        <div class="modal__container">
+          <h2 class="modal__description">
+            New Post
+            <button
+              class="modal__close-btn modal__close-btn_type_cards"
+              type="button"
+            >
+              <img
+                src="./images/BlackX.svg"
+                alt="close icon"
+                class="modal__icon"
+              />
+            </button>
+          </h2>
+
+          <form name="edit-profile" class="modal__form" id="form-card">
+            <label class="modal__label" for="add-card-link-input"
+              >Image link</label
+            >
+            <input
+              class="modal__input"
+              id="add-card-link-input"
+              type="url"
+              placeholder="Paste a link to the picture"
+            />
+            <label class="modal__label" for="add-card-caption-input"
+              >Caption</label
+            >
+            <input
+              class="modal__input"
+              id="add-card-caption-input"
+              type="text"
+              placeholder="Type your caption"
+            />
+            <button type="submit" class="modal__button modal__button-cards">
+              Save
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
     <script src="./scripts/index.js" defer></script>
   </body>
