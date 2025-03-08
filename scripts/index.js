@@ -48,6 +48,7 @@ let profileDescription = document.querySelector(".profile__description");
 const profileButton = document.querySelector(".profile__buttom");
 
 // Cards
+
 let linkText = document.querySelector("#add-card-link-input");
 const cardsList = document.querySelector(".media__cards");
 let captionText = document.querySelector("#add-card-caption-input");
@@ -59,13 +60,16 @@ function getCardsElement(data) {
     .cloneNode(true);
 
   const cardsName = cardsElement.querySelector(".card__description");
-
+  const cardLikeBtn = cardsElement.querySelector(".card__like-btn");
   const cardsImage = cardsElement.querySelector(".card__image");
 
   cardsName.textContent = data.name;
   cardsImage.src = data.link;
   cardsImage.alt = data.name;
 
+  cardLikeBtn.addEventListener("click", () => {
+    cardLikeBtn.classList.toggle("card__like-btn_liked");
+  });
   return cardsElement;
 }
 
@@ -110,10 +114,6 @@ function handlerCardFormSubmit(evt) {
   closeModal();
 }
 
-profileButton.addEventListener("click", () => {
-  openModal(modalAddCards);
-});
-
 //For Each cards
 initialCards.forEach((item) => {
   const cardsElement = getCardsElement(item);
@@ -134,3 +134,7 @@ profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 // Card Form submit
 modalCards.addEventListener("submit", handlerCardFormSubmit);
+
+profileButton.addEventListener("click", () => {
+  openModal(modalAddCards);
+});
