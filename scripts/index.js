@@ -40,7 +40,11 @@ let modalDescription = document.querySelector(".modal__description");
 const modalAddCards = document.querySelector("#modal-edit-card");
 const modalButton = document.querySelector(".modal__button-cards");
 const modalCards = document.querySelector("#form-card");
-
+const modalPreview = document.querySelector("#modal__preview");
+const modalCardCloseBtn = document.querySelector(
+  ".modal__close-btn_type_preview"
+);
+console.log(modalCardCloseBtn);
 //profile
 const modalOpen = document.querySelector(".profile__edit-btn");
 let profileName = document.querySelector(".profile__username");
@@ -62,14 +66,33 @@ function getCardsElement(data) {
   const cardsName = cardsElement.querySelector(".card__description");
   const cardLikeBtn = cardsElement.querySelector(".card__like-btn");
   const cardsImage = cardsElement.querySelector(".card__image");
+  const cardDeleteBtn = cardsElement.querySelector(".card__delete-btn");
+
+  const modalImage = document.querySelector(".modal__image");
+  const modalCaption = document.querySelector(".modal__caption");
 
   cardsName.textContent = data.name;
   cardsImage.src = data.link;
   cardsImage.alt = data.name;
 
+  //card like
   cardLikeBtn.addEventListener("click", () => {
     cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
+
+  //card delete
+  cardDeleteBtn.addEventListener("click", () => {
+    cardsElement.remove();
+  });
+
+  //card preview
+  cardsImage.addEventListener("click", () => {
+    modalImage.src = data.link;
+    modalImage.alt = data.name;
+    modalCaption.textContent = data.name;
+    modalPreview.classList.add("modal_opened");
+  });
+
   return cardsElement;
 }
 
@@ -87,6 +110,7 @@ function openModal(open) {
 function closeModal() {
   modal.classList.remove("modal_opened");
   modalAddCards.classList.remove("modal_opened");
+  modalPreview.classList.remove("modal_opened");
 }
 
 // Profile Form Submit
@@ -109,8 +133,10 @@ function handlerCardFormSubmit(evt) {
   };
 
   const cardsElement = getCardsElement(inputValues);
-
+  captionText.value = "";
+  linkText.value = "";
   cardsList.prepend(cardsElement);
+
   closeModal();
 }
 
@@ -123,7 +149,7 @@ initialCards.forEach((item) => {
 // Close Modal
 modalClose.addEventListener("click", closeModal);
 modalCloseBtn.addEventListener("click", closeModal);
-
+modalCardCloseBtn.addEventListener("click", closeModal);
 // Open Modal
 modalOpen.addEventListener("click", () => {
   openModal(modal);

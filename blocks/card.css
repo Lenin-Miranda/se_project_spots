@@ -1,3 +1,7 @@
+.card {
+  position: relative;
+}
+
 .card__image {
   display: block;
   object-fit: cover;
@@ -48,6 +52,20 @@
   background-image: url(../images/Heart_red-hover.svg);
 }
 
+.card__delete-btn {
+  background: transparent url(../images/Delete-icon.svg) center no-repeat;
+  width: 32px;
+  height: 32px;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: background-image 0.15s linear;
+}
+
+.card__delete-btn:hover {
+  background-image: url(../images/Delete-hover.svg);
+}
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
