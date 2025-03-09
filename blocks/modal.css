@@ -147,6 +147,7 @@
   line-height: 1.2;
   font-weight: 500;
   margin-right: auto;
+  max-width: 100%;
 }
 
 .modal__close-btn_type_preview {
@@ -188,6 +189,7 @@
 
   .modal__caption {
     font-size: 16px;
+    overflow: hidden;
   }
 
   .modal__close-btn_type_preview {
