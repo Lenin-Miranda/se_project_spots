@@ -39,7 +39,6 @@ const cardModalCloseButton = document.querySelector(
 );
 const nameText = document.querySelector(".modal__input_type_name");
 const profileForm = document.querySelector("#profile-form");
-let modalDescription = document.querySelector(".modal__description");
 const modalAddCards = document.querySelector("#modal-edit-card");
 const modalButton = document.querySelector(".modal__button-cards");
 const modalCardsForm = document.querySelector("#form-card");
@@ -52,14 +51,14 @@ const modalCaption = document.querySelector(".modal__caption");
 
 //profile
 const profileOpenButton = document.querySelector(".profile__edit-btn");
-let profileName = document.querySelector(".profile__username");
-let profileDescription = document.querySelector(".profile__description");
+const profileName = document.querySelector(".profile__username");
+const profileDescription = document.querySelector(".profile__description");
 
 // Cards
 
-let linkText = document.querySelector("#add-card-link-input");
+const linkText = document.querySelector("#add-card-link-input");
 const cardsList = document.querySelector(".media__cards");
-let captionText = document.querySelector("#add-card-caption-input");
+const captionText = document.querySelector("#add-card-caption-input");
 const cardModalOpenButton = document.querySelector(".profile__buttom");
 
 // Get Cards
