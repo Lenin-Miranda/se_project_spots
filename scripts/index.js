@@ -116,8 +116,6 @@ function handleProfileFormSubmit(evt) {
   profileName.textContent = nameText.value;
   profileDescription.textContent = descriptionText.value;
 
-  disabledButton(cardSubmitBtn, settings);
-  ``;
   closePopup(profileModal);
 }
 
@@ -133,11 +131,10 @@ function handlerCardFormSubmit(evt) {
   const cardsElement = getCardsElement(inputValues);
   cardsList.prepend(cardsElement);
   evt.target.reset();
-
-  disabledButton(cardSubmitBtn, settings);
-
   closePopup(modalAddCards);
 }
+
+//keyPress
 
 //For Each cards
 initialCards.forEach((item) => {
@@ -154,6 +151,14 @@ cardModalCloseButton.addEventListener("click", () => {
 });
 modalCardCloseBtn.addEventListener("click", () => {
   closePopup(modalPreview);
+});
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    closePopup(profileModal) ||
+      closePopup(modalAddCards) ||
+      closePopup(modalPreview);
+  }
 });
 
 // Open Modal
