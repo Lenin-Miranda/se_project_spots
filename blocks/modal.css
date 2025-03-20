@@ -10,6 +10,7 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 1;
 }
 
 @keyframes opening {
@@ -44,6 +45,7 @@
   padding: 32px 50px;
   border-radius: 8px;
   box-sizing: border-box;
+  z-index: 3;
 }
 .modal__form {
   display: flex;
@@ -110,7 +112,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: opacity 0.5s ease;
-  margin-top: 32px;
+  margin-top: auto;
 }
 
 .modal__error {
