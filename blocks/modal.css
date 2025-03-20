@@ -112,7 +112,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: opacity 0.5s ease;
-  margin-top: auto;
+  margin-top: 32px;
 }
 
 .modal__error {
@@ -196,7 +196,7 @@
   }
 
   .modal__button {
-    margin-top: 24px;
+    margin-top: 86px;
     width: 100%;
   }
 
