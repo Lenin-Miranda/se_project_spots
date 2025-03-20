@@ -121,7 +121,7 @@
   margin: 8px 0 0;
 }
 
-.modal__button-disabled {
+.modal__button_disabled {
   opacity: 50%;
 }
 .modal__button:hover {
