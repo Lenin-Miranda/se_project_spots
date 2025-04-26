@@ -78,5 +78,6 @@ const enableValidation = (config) => {
     setEventListeners(formElement, config);
   });
 };
-
 enableValidation(settings);
+
+export { disableButton, resetValidation, settings, enableValidation };

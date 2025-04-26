@@ -1,3 +1,36 @@
+import { disableButton } from "../scripts/validation.js";
+import { settings } from "../scripts/validation.js";
+import { resetValidation } from "../scripts/validation.js";
+import { enableValidation } from "../scripts/validation.js";
+import "./index.css";
+import avatarSrc from "../images/avatar.jpg";
+import headerLogoSrc from "../images/spots.svg";
+import profileLogoSrc from "../images/pencil.svg";
+import profileLogoPlusSrc from "../images/Plus.svg";
+import closeIconSrc from "../images/BlackX.svg";
+import closeIconPreviewSrc from "../images/Close-icon-white.svg";
+
+const profileAvatar = document.getElementById("profile__avatar");
+profileAvatar.src = avatarSrc;
+
+const headerLogo = document.getElementById("header__logo");
+headerLogo.src = headerLogoSrc;
+
+const profileLogo = document.getElementById("profile__logo");
+profileLogo.src = profileLogoSrc;
+
+const profileLogoPlus = document.getElementById("profile__logo-plus");
+profileLogoPlus.src = profileLogoPlusSrc;
+
+const closeIcon = document.getElementById("close__icon");
+closeIcon.src = closeIconSrc;
+
+const closeIconcards = document.getElementById("close__icon-cards");
+closeIconcards.src = closeIconSrc;
+
+const closeIconPreview = document.getElementById("close__icon-preview");
+closeIconPreview.src = closeIconPreviewSrc;
+
 const initialCards = [
   {
     name: "Val thorens",
@@ -194,3 +227,5 @@ modalCardsForm.addEventListener("submit", handlerCardFormSubmit);
 cardModalOpenButton.addEventListener("click", () => {
   openModal(modalAddCards);
 });
+
+enableValidation(settings);
