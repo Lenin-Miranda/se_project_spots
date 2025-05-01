@@ -6,12 +6,43 @@
   margin: 34px auto 20px;
 }
 
+.profile__container-avatar {
+  display: flex;
+  width: 100%;
+  max-width: 190px;
+  height: 190px;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.profile__avatar-btn {
+  position: relative;
+  bottom: 32px;
+  font-size: 16px;
+  background-color: transparent;
+
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .profile__avatar {
   height: 190px;
   width: 190px;
-  margin-right: 20px;
+  z-index: 1;
   object-fit: cover;
   border-radius: 8px;
+  transition: opacity 0.3s linear;
+}
+
+.profile__avatar:hover {
+  opacity: 50%;
+}
+.profile_avatar-index {
+  z-index: 2;
 }
 
 .profile__buttom {
