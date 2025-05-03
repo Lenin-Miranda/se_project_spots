@@ -3,7 +3,7 @@ import { settings } from "../scripts/validation.js";
 import { resetValidation } from "../scripts/validation.js";
 import { enableValidation } from "../scripts/validation.js";
 import "./index.css";
-import avatarSrc from "../images/avatar.jpg";
+
 import headerLogoSrc from "../images/spots.svg";
 import profileLogoSrc from "../images/pencil.svg";
 import profileLogoPlusSrc from "../images/Plus.svg";
@@ -105,13 +105,6 @@ const profileAvatarLogoContainer = document.querySelector(
 const profileAvatarModal = document.querySelector("#modal-edit-avatar");
 const profileAvatarBtn = document.querySelector(".profile__avatar-btn");
 const profileAvatarInput = document.querySelector("#add-avatar-link-input");
-console.log(
-  profileAvatarBtn,
-  profileAvatarModal,
-  profileAvatarLogo,
-  profileAvatarLogoContainer,
-  profileAvatarInput
-);
 
 // Cards
 
@@ -123,6 +116,7 @@ const cardModalOpenButton = document.querySelector(".profile__buttom");
 let selectedCard = null;
 let selectedCardId = null;
 let currentUserId = null;
+
 //button
 const modalDeleteBtn = document.querySelector(".modal__button-delete");
 const modalDeleteCancelBtn = document.querySelector(".modal__button-cancel");
@@ -138,18 +132,6 @@ const api = new Api({
 });
 
 api
-  .getInitialCards()
-  .then((res) => {
-    res.forEach((item) => {
-      const cardsElement = getCardsElement(item);
-      cardsList.prepend(cardsElement);
-    });
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-
-api
   .getAllData()
   .then(([cardsData, usersData]) => {
     currentUserId = usersData._id;
@@ -157,6 +139,11 @@ api
     profileDescription.textContent = usersData.about;
     profileAvatar.src = usersData.avatar;
     profileAvatar.alt = usersData.name;
+
+    cardsData.forEach((item) => {
+      const cardsElement = getCardsElement(item);
+      cardsList.prepend(cardsElement);
+    });
   })
   .catch((err) => {
     console.error(err);
@@ -177,6 +164,9 @@ function getCardsElement(data) {
   cardsImage.src = data.link;
   cardsImage.alt = data.name;
 
+  if (data.isLiked) {
+    cardLikeBtn.classList.add("card__like-btn_liked");
+  }
   //card like
   cardLikeBtn.addEventListener("click", () => {
     const isLiked = cardLikeBtn.classList.contains("card__like-btn_liked");
@@ -199,7 +189,6 @@ function getCardsElement(data) {
           console.error("failed to add like:", err);
         });
     }
-    cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
 
   //card delete
@@ -245,7 +234,7 @@ function handleAvatarSubmit(evt) {
       disableButton(modalAvatarBtn, settings);
       profileAvatarLogo.src = updatedUser.avatar;
       profileAvatarLogo.alt = updatedUser.name;
-
+      modalAvatarForm.reset();
       closePopup(profileAvatarModal);
     })
     .catch((err) => {
@@ -253,7 +242,6 @@ function handleAvatarSubmit(evt) {
       // Puedes mostrar un mensaje de error en la UI si lo deseas
     })
     .finally(() => {
-      modalAvatarForm.reset();
       modalAvatarBtn.textContent = originalText;
     });
 }
@@ -262,7 +250,6 @@ modalAvatarBtn.addEventListener("click", handleAvatarSubmit);
 function handleDeleteSubmit(evt) {
   evt.preventDefault();
 
-  console.log("Deleting card:", selectedCardId, selectedCard);
   if (!selectedCardId || !selectedCard) return;
 
   const originalText = modalDeleteBtn.textContent;
@@ -273,6 +260,9 @@ function handleDeleteSubmit(evt) {
     .then(() => {
       if (selectedCard) {
         modalDeleteBtn.textContent = originalText;
+
+        closePopup(modalDelete);
+
         selectedCard.remove();
       }
       selectedCard = null;
@@ -280,11 +270,6 @@ function handleDeleteSubmit(evt) {
     })
     .catch((err) => {
       console.error("Failed to delete card:", err);
-    })
-    .finally(() => {
-      setTimeout(() => {
-        closePopup(modalDelete);
-      }, 100);
     });
 }
 
