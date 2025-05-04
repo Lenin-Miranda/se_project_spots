@@ -302,14 +302,19 @@ function handleProfileFormSubmit(evt) {
       profileName.textContent = updatedUser.name;
       profileDescription.textContent = updatedUser.about;
       modalSubmitBtnProfile.textContent = originalText;
+      closePopup(profileModal);
     })
     .catch((err) => {
       console.error("Failed to update user info:", err);
     })
     .finally(() => {
-      setTimeout(() => {
-        closePopup(profileModal);
-      }, 100);
+      disableButton(modalSubmitBtnProfile, settings);
+      resetValidation(
+        profileForm,
+        [nameText, descriptionText],
+        cardSubmitBtn,
+        settings
+      );
     });
 }
 
