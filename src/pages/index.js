@@ -92,6 +92,7 @@ const modalCardCloseBtn = document.querySelector(
 );
 const modalAvatarForm = document.querySelector("#form-avatar");
 const modalImage = document.querySelector(".modal__image");
+
 const modalCaption = document.querySelector(".modal__caption");
 
 //profile
@@ -259,10 +260,6 @@ function handleDeleteSubmit(evt) {
     .removeCard(selectedCardId)
     .then(() => {
       if (selectedCard) {
-        modalDeleteBtn.textContent = originalText;
-
-        closePopup(modalDelete);
-
         selectedCard.remove();
       }
       selectedCard = null;
@@ -270,6 +267,10 @@ function handleDeleteSubmit(evt) {
     })
     .catch((err) => {
       console.error("Failed to delete card:", err);
+    })
+    .finally(() => {
+      modalDeleteBtn.textContent = originalText;
+      closePopup(modalDelete);
     });
 }
 
@@ -303,18 +304,10 @@ function handleProfileFormSubmit(evt) {
       profileDescription.textContent = updatedUser.about;
       modalSubmitBtnProfile.textContent = originalText;
       closePopup(profileModal);
+      disableButton(modalSubmitBtnProfile, settings);
     })
     .catch((err) => {
       console.error("Failed to update user info:", err);
-    })
-    .finally(() => {
-      disableButton(modalSubmitBtnProfile, settings);
-      resetValidation(
-        profileForm,
-        [nameText, descriptionText],
-        cardSubmitBtn,
-        settings
-      );
     });
 }
 
@@ -331,17 +324,15 @@ function handlerCardFormSubmit(evt) {
     .then((newCard) => {
       const cardsElement = getCardsElement(newCard);
       cardsList.prepend(cardsElement);
-
       disableButton(evt.submitter, settings);
-
       modalCardsForm.reset();
+      closePopup(modalAddCards);
     })
     .catch((err) => {
       console.error("Failed to load card:", err);
     })
     .finally(() => {
       evt.submitter.textContent = originalText;
-      closePopup(modalAddCards);
     });
 }
 function closePopupOutside(modals) {
