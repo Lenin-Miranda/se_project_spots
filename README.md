@@ -1,28 +1,56 @@
-# Project 3 Dots tripleten
+# Spots 🌄📍
 
-This is my third project of the software engineering program at TripleTen. It was created using HTML and CSS.
+A responsive and interactive web application for sharing and saving favorite spots around the world. Built with **vanilla JavaScript**, this project emphasizes clean modular code, API integration, and a dynamic user experience with modals and form validation.
 
-## Project features
+---
 
-- Semantic HTML5
-- Flexbox
-- Poistioning
-- Responsive WebPage
-- @Fonts
-- Media Querys for mobile devices
+## 🔍 Overview
 
-## Features
+Spots allows users to explore a gallery of cards representing locations ("spots") they like. Each card includes a name and image, and users can add, like, delete, or view details in a modal. Built as part of a training project to practice working with REST APIs, dynamic DOM manipulation, and form validation.
 
-! [My website can have a better time rendering all the content with this](./images/feature1.png)
+---
 
-! [Improving this new feature so i can make my website responsive](./images/feature2.png)
+## ✨ Features
 
-! [Media Querys, my website can be display in different devices](./images/feature3.png)
+- **Add a new spot** with form validation (name and image URL)
+- **Like/unlike cards**
+- **Delete owned cards**
+- **Edit user avatar and profile**
+- **View spot image in an enlarged preview modal**
+- **Form feedback and validation messages**
+- **Modular JavaScript architecture**
+- **API integrated** with asynchronous requests
+- **Responsive layout** with CSS Grid & Flexbox
 
-## Link
+---
 
-https://lenin-miranda.github.io/se_project_spots/
+## 🛠 Tech Stack
 
-## Video for my project
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6+)**
+- **REST API (with mock server or backend integration)**
+- **Webpack** (build tool)
+- **BEM** (naming convention)
 
-https://drive.google.com/file/d/1CiKqVAWDXIzpi47nH5Sc-qIXTN5kVNrB/view?usp=drive_link
+---
+
+## 📁 Getting Started
+
+1. **Clone the repo:**
+
+- **bash**
+  git clone https://github.com/Lenin-Miranda/se_project_spots
+  cd se_project_spots
+
+2. _install dependencies_
+
+- npm install
+
+3. _Run the development sever_
+
+- npm run start
+
+4. _build for production_
+
+- npm run build
